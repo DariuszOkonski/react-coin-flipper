@@ -46,8 +46,8 @@ const Game = () => {
         </ul>
       </div>
 
-      <div className="text-center" style={{ height: '200px' }}>
-        {tailHead && <img src={tailHead} style={{ maxWidth: '200px' }} alt="picture" className="rounded" />}
+      <div className="text-center" style={{ height: '150px' }}>
+        {tailHead && <img src={tailHead} style={{ maxWidth: '150px' }} alt="coin" className="rounded" />}
       </div>
 
       <button
@@ -55,7 +55,7 @@ const Game = () => {
         onClick={flipCoin}
         style={centralStyle}
         type="button"
-        className="btn btn-secondary btn-lg btn-block"
+        className="btn btn-secondary btn-lg btn-block mb-4"
       >Flip Me!</button>
     </div>
   );
