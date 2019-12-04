@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Navigation';
 import Home from './Home';
 import About from './About';
+import Game from './Game';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <div className="container appContainer">
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route exact path='/game' render={() => <h2>Game</h2>} />
+            <Route exact path='/game' component={Game} />
             <Route exact path='/about' component={About} />
             <Route render={() => <h2>Error</h2>} />
           </Switch>
