@@ -5,6 +5,7 @@ import Home from './Home';
 import About from './About';
 import Game from './Game';
 import ErrorComponent from './Error';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route component={ErrorComponent} />
           </Switch>
         </div>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );
