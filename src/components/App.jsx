@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import Home from './Home';
 import About from './About';
 import Game from './Game';
+import ErrorComponent from './Error';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route exact path='/game' component={Game} />
             <Route exact path='/about' component={About} />
-            <Route render={() => <h2>Error</h2>} />
+            <Route component={ErrorComponent} />
           </Switch>
         </div>
       </BrowserRouter>
