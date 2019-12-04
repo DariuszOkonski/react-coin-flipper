@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navigation from './Navigation';
 import Home from './Home';
+import About from './About';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/game' render={() => <h2>Game</h2>} />
-            <Route exact path='/about' render={() => <h2>About</h2>} />
+            <Route exact path='/about' component={About} />
             <Route render={() => <h2>Error</h2>} />
           </Switch>
         </div>
