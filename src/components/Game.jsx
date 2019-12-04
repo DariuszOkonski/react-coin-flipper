@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import headImg from '../img/head.png';
 import tailImg from '../img/tail.png';
 import loading from '../img/loading.gif';
+import { GameContext } from '../contexts/GameContext';
+import Results from './Results';
+import Coin from './Coin';
+import FlipButton from './FlipButton';
 
 const coin = ['head', 'tail'];
 
@@ -37,27 +41,13 @@ const Game = () => {
   }
 
   return (
-    <div>
-      <div className="card" style={centralStyle}>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item bg-primary text-light text-center">Flips: {flips}</li>
-          <li className="list-group-item bg-primary text-light text-center">Heads: {heads}</li>
-          <li className="list-group-item bg-primary text-light text-center">Tails: {tails}</li>
-        </ul>
+    <GameContext.Provider value={{ flips, heads, tails, centralStyle, tailHead, btnOnOff, flipCoin }}>
+      <div>
+        <Results />
+        <Coin />
+        <FlipButton />
       </div>
-
-      <div className="text-center" style={{ height: '150px' }}>
-        {tailHead && <img src={tailHead} style={{ maxWidth: '150px' }} alt="coin" className="rounded" />}
-      </div>
-
-      <button
-        disabled={btnOnOff}
-        onClick={flipCoin}
-        style={centralStyle}
-        type="button"
-        className="btn btn-secondary btn-lg btn-block mb-4"
-      >Flip Me!</button>
-    </div>
+    </GameContext.Provider>
   );
 }
 
